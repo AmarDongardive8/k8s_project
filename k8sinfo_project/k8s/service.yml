@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-svc
+  namespace: django-ns
+spec:
+  selector:
+    app: django-app
+  ports:
+    - protocol: TCP
+      port: 8001   #cluster / host port [service]
+      targetPort: 8000  #continer port
